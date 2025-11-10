@@ -23,8 +23,11 @@
 # misc
 .DS_Store
 *.pem
+
+# development tools
 .spec-workflow
 .claude
+.serena
 
 # debug
 npm-debug.log*

@@ -3,10 +3,36 @@
 import * as React from "react"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { X } from "lucide-react"
+import posthog from "posthog-js"
 
 import { cn } from "@/lib/utils"
 
-const Dialog = DialogPrimitive.Root
+// Wrapper to track dialog open/close events
+interface DialogProps extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Root> {
+  dialogName?: string
+}
+
+const Dialog: React.FC<DialogProps> = ({ onOpenChange, dialogName, ...props }) => {
+  const handleOpenChange = (open: boolean) => {
+    if (open) {
+      posthog.capture('Dialog Opened', {
+        dialog_name: dialogName || 'unknown',
+      })
+    } else {
+      posthog.capture('Dialog Closed', {
+        dialog_name: dialogName || 'unknown',
+      })
+    }
+    onOpenChange?.(open)
+  }
+
+  return (
+    <DialogPrimitive.Root
+      onOpenChange={handleOpenChange}
+      {...props}
+    />
+  )
+}
 
 const DialogTrigger = DialogPrimitive.Trigger
 

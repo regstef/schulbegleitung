@@ -1,0 +1,22 @@
+{
+  "filePath": ".spec-workflow/specs/foundation-setup/requirements.md",
+  "currentVersion": 2,
+  "snapshots": [
+    {
+      "version": 1,
+      "filename": "snapshot-001.json",
+      "timestamp": "2025-11-10T12:31:57.990Z",
+      "trigger": "initial",
+      "approvalId": "approval_1762777917971_xx8j5xvra",
+      "approvalTitle": "Foundation Setup - Requirements Document"
+    },
+    {
+      "version": 2,
+      "filename": "snapshot-002.json",
+      "timestamp": "2025-11-10T12:35:45.058Z",
+      "trigger": "approved",
+      "approvalId": "approval_1762778096091_le0nn3ksd",
+      "approvalTitle": "Foundation Setup - Requirements Document (Refined)"
+    }
+  ]
+}

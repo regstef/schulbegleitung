@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "spec-workflow": {
+      "command": "npx",
+      "args": ["-y", "@pimzino/spec-workflow-mcp@latest", "/Users/regstef/Documents/GitHub/schulbegleitung"]
+    },
+    "Context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "serena": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server"]
+    },
+    "ultracite": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://www.ultracite.ai/api/mcp/mcp"]
+    }
+  }
+}

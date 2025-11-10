@@ -1,12 +1,20 @@
 {
   "filePath": ".spec-workflow/specs/foundation-setup/tasks.md",
-  "currentVersion": 1,
+  "currentVersion": 2,
   "snapshots": [
     {
       "version": 1,
       "filename": "snapshot-001.json",
       "timestamp": "2025-11-10T12:51:18.108Z",
       "trigger": "initial",
+      "approvalId": "approval_1762779078106_wanr25eoo",
+      "approvalTitle": "Foundation Setup - Tasks Document"
+    },
+    {
+      "version": 2,
+      "filename": "snapshot-002.json",
+      "timestamp": "2025-11-10T12:59:25.920Z",
+      "trigger": "approved",
       "approvalId": "approval_1762779078106_wanr25eoo",
       "approvalTitle": "Foundation Setup - Tasks Document"
     }

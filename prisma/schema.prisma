@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Lead {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  name          String?
+  phone         String?
+  region        String
+  schoolType    String
+  needType      String
+  timeframe     String?
+  contactMethod String
+  source        String?
+  consentFlags  Json
+  notes         String?
+  n8nProcessed  Boolean  @default(false)
+  n8nJobId      String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([email])
+  @@index([createdAt])
+}
+
+model Appointment {
+  id              String   @id @default(cuid())
+  leadEmail       String
+  calBookingId    String   @unique
+  calEventId      String
+  timeSlot        DateTime
+  status          String
+  rescheduleCount Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([leadEmail])
+  @@index([timeSlot])
+}

@@ -11,7 +11,7 @@ This document breaks down the Foundation Setup into **12 sequential tasks** foll
 
 ## Task 1: Project Initialization
 
-- [ ] **1. Initialize Next.js 15 project with pnpm and TypeScript**
+- [x] **1. Initialize Next.js 15 project with pnpm and TypeScript**
   - **Files to create:**
     - Root project structure (via `pnpm create next-app@latest`)
     - `package.json` (with pnpm packageManager field)
@@ -88,7 +88,7 @@ This document breaks down the Foundation Setup into **12 sequential tasks** foll
 
 ## Task 2: Configuration Files
 
-- [ ] **2. Create project configuration files (.editorconfig, .gitignore, .env.example, ESLint, Prettier)**
+- [x] **2. Create project configuration files (.editorconfig, .gitignore, .env.example, ESLint, Prettier)**
   - **Files to create:**
     - `.editorconfig`
     - `.gitignore` (update existing)
@@ -196,7 +196,7 @@ This document breaks down the Foundation Setup into **12 sequential tasks** foll
 
 ## Task 3: Testing Infrastructure
 
-- [ ] **3. Configure Vitest and Playwright for unit and E2E testing**
+- [x] **3. Configure Vitest and Playwright for unit and E2E testing**
   - **Files to create:**
     - `vitest.config.ts`
     - `playwright.config.ts`
@@ -313,7 +313,7 @@ This document breaks down the Foundation Setup into **12 sequential tasks** foll
 
 ## Task 4: Basic Routing (App Shell)
 
-- [ ] **4. Create basic Next.js App Router structure (RootLayout, home page, error pages)**
+- [x] **4. Create basic Next.js App Router structure (RootLayout, home page, error pages)**
   - **Files to create/modify:**
     - `app/layout.tsx` (update existing)
     - `app/page.tsx` (update existing)
@@ -452,7 +452,7 @@ This document breaks down the Foundation Setup into **12 sequential tasks** foll
 
 ## Task 5: Tailwind CSS Custom Theme
 
-- [ ] **5. Configure Tailwind CSS 4 with custom theme (colors, fonts, spacing)**
+- [x] **5. Configure Tailwind CSS 4 with custom theme (colors, fonts, spacing)**
   - **Files to create/modify:**
     - `tailwind.config.ts` (update existing)
     - `app/globals.css` (update existing)
@@ -598,7 +598,7 @@ This document breaks down the Foundation Setup into **12 sequential tasks** foll
 
 ## Task 6: shadcn/ui Component Library
 
-- [ ] **6. Install and configure shadcn/ui with 8 base components**
+- [x] **6. Install and configure shadcn/ui with 8 base components**
   - **Files to create:**
     - `src/components/ui/button.tsx`
     - `src/components/ui/card.tsx`
@@ -709,7 +709,7 @@ This document breaks down the Foundation Setup into **12 sequential tasks** foll
 
 ## Task 7: Database Setup (Prisma + Postgres)
 
-- [ ] **7. Configure Prisma with Lead and Appointment models, run initial migration**
+- [x] **7. Configure Prisma with Lead and Appointment models, run initial migration**
   - **Files to create:**
     - `prisma/schema.prisma`
     - `prisma/migrations/` (via prisma migrate)

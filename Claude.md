@@ -3,6 +3,7 @@
 ## Serena MCP (Primäre Code-Analyse)
 
 **Nutze IMMER Serena für:**
+
 - Code-Analyse und Navigation (`mcp__serena__find_symbol`, `mcp__serena__get_symbols_overview`)
 - Symbol-basierte Code-Bearbeitung (`mcp__serena__replace_symbol_body`, `mcp__serena__insert_after_symbol`)
 - Refactoring (`mcp__serena__rename_symbol`, `mcp__serena__find_referencing_symbols`)
@@ -12,6 +13,7 @@
 - Projekt-Wissen speichern (`mcp__serena__write_memory`, `mcp__serena__read_memory`)
 
 **Wichtig:**
+
 - Bevorzuge symbolische Tools gegenüber vollständigem Lesen von Dateien
 - Nutze `get_symbols_overview` vor detaillierter Analyse
 - Verwende `find_symbol` mit `depth` und `include_body` für gezielte Code-Einblicke
@@ -20,16 +22,19 @@
 ## Context7 (Bibliotheks-Dokumentation)
 
 **Nutze Context7 für:**
+
 - Aktuelle Dokumentation von npm-Paketen, Frameworks, APIs
 - Implementierung mit offiziellen Beispielen und Best Practices
 
 **Workflow:**
+
 1. `mcp__Context7__resolve-library-id` → Library-ID ermitteln
 2. `mcp__Context7__get-library-docs` → Dokumentation abrufen
 
 ## Spec Workflow / spec-workflow (Projektorganisation)
 
 **Nutze spec-workflow für:**
+
 - Projektstrukturierung und Architektur
 - Aufgabenverwaltung und Planung
 - Spezifikationserstellung
@@ -38,12 +43,14 @@
 ## Ultracite (Erweiterte Dokumentation & Best Practices)
 
 **Nutze Ultracite IMMER für:**
+
 - Komponentenerstellung und -anpassung (Shadcn, React, Next.js)
 - Framework-spezifische Best Practices und Patterns
 - API-Integrationen und moderne Web-Standards
 - Architektur-Empfehlungen für Komponenten-Design
 
 **Workflow beim Erstellen/Anpassen von Komponenten:**
+
 1. **Recherche** - Ultracite für aktuelle Best Practices und Patterns konsultieren
 2. **Planung** - Dokumentierte Patterns und Empfehlungen anwenden
 3. **Implementierung** - Code mit Ultracite-Richtlinien abgleichen
@@ -56,12 +63,14 @@
 ### Strikte Anforderungen
 
 **Komponenten-Bibliotheken (AUSSCHLIESSLICH):**
+
 - ✅ **shadcn/ui** - Basis-Komponenten (Button, Input, Card, etc.)
 - ✅ **shadcnblocks** - Pre-built Section-Komponenten (Hero, Features, etc.)
 - ❌ **KEINE** anderen UI-Libraries (Material-UI, Chakra, Ant Design, etc.)
 - ❌ **KEINE** Custom-Komponenten ohne Shadcn-Basis
 
 **Styling:**
+
 - ✅ **Tailwind CSS 4.0+** mit Custom Theme
 - ✅ Tailwind Utility-Classes
 - ❌ **KEIN** CSS-in-JS (styled-components, emotion)
@@ -104,23 +113,23 @@
 ### Anti-Patterns (NIEMALS)
 
 ❌ **Nicht erlaubt:**
+
 ```tsx
 // FALSCH: Custom Button ohne Shadcn
-const CustomButton = ({ children }) => (
-  <button className="my-custom-button">{children}</button>
-)
+const CustomButton = ({ children }) => <button className="my-custom-button">{children}</button>
 
 // FALSCH: Material-UI Import
-import { Button } from '@mui/material'
+import { Button } from "@mui/material"
 
 // FALSCH: Inline-Styles
-<div style={{ color: 'blue' }}>...</div>
+;<div style={{ color: "blue" }}>...</div>
 
 // FALSCH: CSS Modules
-import styles from './hero.module.css'
+import styles from "./hero.module.css"
 ```
 
 ✅ **Korrekt:**
+
 ```tsx
 // RICHTIG: Shadcn Button
 import { Button } from "@/components/ui/button"
@@ -129,18 +138,20 @@ import { Button } from "@/components/ui/button"
 import { HeroBlock } from "@/components/blocks/hero-block"
 
 // RICHTIG: Tailwind Utilities
-<div className="text-primary bg-background">...</div>
+;<div className="text-primary bg-background">...</div>
 ```
 
 ### Tailwind Theme Referenz
 
 **Immer verwenden:**
+
 - Colors: `text-primary`, `bg-secondary`, `border-accent`
 - Typography: `text-heading-1`, `text-body`, `font-display`
 - Spacing: Theme-definierte Werte
 - Radius: `rounded-theme-sm`, `rounded-theme-md`
 
 **Theme-Struktur:**
+
 ```ts
 // tailwind.config.ts (Referenz)
 theme: {
@@ -166,21 +177,36 @@ theme: {
 ### Ultracite AI-Code-Review (Automatisch)
 
 **GitHub App Integration:**
+
 - ✅ Ultracite reviewed automatisch jeden Pull Request
 - ✅ Keine manuelle Konfiguration nötig
 - ✅ Feedback zu Code-Qualität, Best Practices, logischen Fehlern
 - ✅ Komplementär zu ESLint/Prettier
 
 **Für AI Agents - Workflow:**
+
 1. Code schreiben (ESLint + Prettier konform)
 2. Commit & Push → PR erstellen
 3. Ultracite reviewt automatisch (innerhalb Minuten)
 4. Feedback berücksichtigen & iterativ verbessern
 
 **Best Practices:**
+
 - Ultracite-Feedback ernst nehmen (höhere Code-Qualität)
 - Keine "Quick Fixes" ohne Problemverständnis
 - ESLint = Syntax-Check, Ultracite = Qualitäts-Check
+
+---
+
+## Steering-Dokumente (Context on Demand)
+
+**Wann Steering-Dokumente lesen:**
+
+- 📋 **Product Steering** (`.spec-workflow/steering/product.md`) → Bei Feature-Planung, User-Journey-Fragen, Business-Requirements
+- 🛠️ **Tech Steering** (`.spec-workflow/steering/tech.md`) → Bei Technologie-Entscheidungen, Architektur-Fragen, Integration-Setup
+- 📁 **Structure Steering** (`.spec-workflow/steering/structure.md`) → Bei Code-Organisation, Naming-Conventions, Import-Patterns
+
+**Regel:** Lies relevante Steering-Docs **vor Beginn** von Implementation/Planning, **nicht** bei kleineren Code-Änderungen.
 
 ---
 
@@ -193,3 +219,4 @@ theme: {
 5. **Symbolisch arbeiten**: Vollständiges Dateilesen vermeiden, symbolische Navigation bevorzugen
 6. **Design System First**: IMMER Shadcn Blocks verwenden, IMMER auf Nutzer-Auswahl warten
 7. **Code Quality**: ESLint/Prettier für Syntax, Ultracite für Qualität & Best Practices
+8. **Steering-Context**: Relevante Steering-Docs lesen vor größeren Implementierungen

@@ -2,7 +2,11 @@
   "mcpServers": {
     "spec-workflow": {
       "command": "npx",
-      "args": ["-y", "@pimzino/spec-workflow-mcp@latest", "/Users/regstef/Documents/GitHub/schulbegleitung"]
+      "args": [
+        "-y",
+        "@pimzino/spec-workflow-mcp@latest",
+        "/Users/regstef/Documents/GitHub/schulbegleitung"
+      ]
     },
     "Context7": {
       "command": "npx",
